@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate Deployment Package 
         # zip all files except .git
-        run: zip -r cs_advisory_bot.zip * -x "**.git**"
+        run: zip -r cs_advisory_bot1.zip * -x "**.git**"
 
       - name: Get timestamp
         uses: gerred/actions/current-time@master
@@ -42,7 +42,7 @@ jobs:
           environment_name: CS-Advisory-Bot-env
           version_label: "app-${{ steps.format-time.outputs.replaced }}"
           region: eu-west-1
-          deployment_package: cs_advisory_bot.zip
+          deployment_package: cs_advisory_bot1.zip
 
       - name: Deployed!
         run: echo App deployed to ELB
