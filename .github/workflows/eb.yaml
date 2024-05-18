@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate Deployment Package 
         # zip all files except .git
-        run: zip -r react_calling_api.zip * -x "**.git**"
+        run: zip -r final-api-call.zip * -x "**.git**"
 
       - name: Get timestamp
         uses: gerred/actions/current-time@master
@@ -38,11 +38,11 @@ jobs:
          #  input the credentials you used to setup AWS CLI and credentials for the application environment
           aws_access_key: "${{ secrets.ACCESS_KEY }}"
           aws_secret_key: "${{ secrets.SECRET_ACCESS_KEY }}"
-          application_name: react_calling_api
-          environment_name: Reactcallingapi-env
+          application_name: final-api-call
+          environment_name: Final-api-call-env
           version_label: "app-${{ steps.format-time.outputs.replaced }}"
           region: eu-west-1
-          deployment_package: react_calling_api.zip
+          deployment_package: final-api-call.zip
 
       - name: Deployed!
         run: echo App deployed to ELB
