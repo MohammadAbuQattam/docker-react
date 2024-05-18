@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          our dump CS Advisory Bot
+          our dump CS Advisory Bot (:
         </p>
         <a
           className="App-link"
